@@ -1,3 +1,4 @@
+
 body{
     padding: 0;
     margin: 0;
@@ -13,8 +14,17 @@ body{
     color: white;
 }
 
+.nav li{
+    padding: 0em .3em;
+}
 .nav-bar-top-text{
-    color: #e0046c !important;
+    color: #e0046c;
+}
+
+.nav-bar-top-text:hover{
+    color: black;
+    background-color: #e0046c;
+    transition: 1s;
 }
 
 .header-top header, .nav-control{
@@ -28,36 +38,84 @@ body{
 .btn{
     background-color: #e0046c;
     color: white;
-    border: #e0046c;
+    /* border: #e0046c; */
 }
 
 .btn:hover{
-    background-color: #e0046b23;
-    /* border: 1px solid #e0046c; */
+    background-color: white;
+    color: #e0046c;
+    border: 1px solid #e0046c;
 }
 
 .nav-control{
-    background-color: grey;
+    color: white;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(176,176,176,1) 3%, rgba(111,111,111,1) 51%, rgba(158,158,158,1) 99%, rgba(255,255,255,1) 100%);
     height: 7em;
 }
 
 .nav-control a{
+    padding-bottom: .2em;
     text-decoration: none;
     color: black;
     font-weight: bolder;
     font-size: 3em;
 }
 
+.nav-control a:hover{
+    color: #e0046c;
+    transition: .3s;
+}
+
 .search-logo{
-    padding-top: .3em;
-    padding-left: 1em;
-    color: black;
+    margin-left: 1em;
+    color: #e0046c;
+}
+
+.search-logo svg{
+    width: 2em;
+    height: 1.3em;
+}
+
+.search-logo:hover{
+    color: white;
+    background-color: #e0046c;
+    border-radius: 45px;
+}
+
+.cards-container{
+    padding-top: 3em;
+    padding-bottom: 10em;
+    width: 100%;
+}
+
+.cards-container p{
+    margin: 0px;
+}
+
+.card{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.34);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.34);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.34);
+}
+
+.card-img-top{
+    margin-top: 1em;
+    border-radius: 10px;
+}
+
+.price{
+    margin-top: 1em;
 }
 /*                                                      contact  */
 
 textarea {
     resize: none;
-  }
+}
+
+.form-container{
+    margin-bottom: 2em;
+}
+
 /*                                                      details  */
 
 .details-card{
@@ -74,3 +132,18 @@ textarea {
 .imagen img{
     height: 15em;
 }
+
+/*                                                        footer*/
+footer{
+    padding-top: 3em;
+    padding-bottom: 2em;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(111,111,111,1) 100%);
+
+
+}
+.redes .ig, .redes .fb, .redes .wpp{
+    width: 3em;
+    height: 3em;
+    color: #e0046c;
+    margin-right: 1em;
+} 
