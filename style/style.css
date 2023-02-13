@@ -1,3 +1,9 @@
+body{
+    padding: 0;
+    margin: 0;
+    min-height: 45em;
+}
+
 .logo img{
     width: 12em;
 }
@@ -9,6 +15,10 @@
 
 .nav-bar-top-text{
     color: #e0046c !important;
+}
+
+.header-top header, .nav-control{
+    padding: 0px 13px;
 }
 
 .label-distance{
@@ -26,14 +36,41 @@
     /* border: 1px solid #e0046c; */
 }
 
-
-/*                                                      contact   */
-
-#message{
-    width: 20rem;
-    height: 8rem;
+.nav-control{
+    background-color: grey;
+    height: 7em;
 }
 
-.btn-form{
-    
+.nav-control a{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 3em;
+}
+
+.search-logo{
+    padding-top: .3em;
+    padding-left: 1em;
+    color: black;
+}
+/*                                                      contact  */
+
+textarea {
+    resize: none;
+  }
+/*                                                      details  */
+
+.details-card{
+    margin-top: 5em;
+    width: 46em;
+    height: 30em;
+    padding: 1em;
+}
+
+.imagen, .detail{
+    margin: .5em;
+}
+
+.imagen img{
+    height: 15em;
 }

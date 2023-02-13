@@ -9,7 +9,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/favicon-AmazingEvents.ico" />
-    <title>Home</title>
+    <title>Upcoming Events</title>
 </head>
 
 <body>
@@ -21,23 +21,27 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="./index.html" id="active" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="./upcoming-events.html" class="nav-link">Upcoming Events</a></li>
+                <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./upcoming-events.html" id="active" class="nav-link">Upcoming Events</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Past Events</a></li>
                 <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Stats</a></li>
             </ul>
         </header>
         <div class="nav-control d-flex justify-content-between align-items-center">
-            <a href="./contact.html"><</a>
-            <h1>Home</h1>
-            <a href="./upcoming-events.html">></a>
+            <a href="./index.html"><</a>
+            <h1>Upcoming Events</h1>
+            <a href="./past-events.html">></a>
         </div>
     </div>
     <section class="p-3 mb-3 border-bottom">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
 
                 <section class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0" >
                     <input type="checkbox" id="Category1" name="category" value="Category">
@@ -50,12 +54,8 @@
                     <label for="category" class="label-distance">Category</label>
                 </section>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                    <a href="#" class="search-logo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
-                    </a>
                 </form>
 
             </div>
@@ -102,7 +102,22 @@
         </div>
     </section>
 
-   <footer>ah</footer>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          </ul>
+        </footer>
+      </div>
     
 
 
