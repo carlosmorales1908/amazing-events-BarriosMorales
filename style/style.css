@@ -1,0 +1,39 @@
+.logo img{
+    width: 12em;
+}
+
+#active{
+    background-color: #e0046c;
+    color: white;
+}
+
+.nav-bar-top-text{
+    color: #e0046c !important;
+}
+
+.label-distance{
+    padding-right: 3em;
+}
+
+.btn{
+    background-color: #e0046c;
+    color: white;
+    border: #e0046c;
+}
+
+.btn:hover{
+    background-color: #e0046b23;
+    /* border: 1px solid #e0046c; */
+}
+
+
+/*                                                      contact   */
+
+#message{
+    width: 20rem;
+    height: 8rem;
+}
+
+.btn-form{
+    
+}
