@@ -2,7 +2,7 @@
 body{
     padding: 0;
     margin: 0;
-    min-height: 45em;
+    /* min-height: 45em; */
 }
 
 .logo img{
@@ -120,13 +120,18 @@ textarea {
 
 .details-card{
     margin-top: 5em;
-    width: 46em;
-    height: 30em;
+    max-width: 936px;
+    height: auto;
+    /* max-height: 292px; */
     padding: 1em;
 }
 
 .imagen, .detail{
     margin: .5em;
+}
+
+.detail{
+    padding: 1em;
 }
 
 .imagen img{
@@ -147,3 +152,31 @@ footer{
     color: #e0046c;
     margin-right: 1em;
 } 
+
+/*                                                      stats */
+.stats-table{
+    margin-top: 2em;
+}
+
+
+.first-theader{
+    background-color: #e0428c;
+    color: rgb(43, 43, 43);
+}
+
+.second-theader{
+    background-color: #929292;
+    color: black;
+}
+
+
+/*                                              responsive  */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+    .details-card{
+        flex-wrap: wrap;
+    }
+    .imagen img{
+        height: 13em;
+    }
+    
+}
