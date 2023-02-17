@@ -103,6 +103,8 @@ main{
 }
 
 .card-img-top{
+    max-width: 16em;
+    max-height: 10em;
     margin-top: 1em;
     border-radius: 10px;
 }
@@ -137,6 +139,7 @@ textarea {
 .detail{
     padding: 1em;
 }
+
 
 .imagen img{
     height: 15em;
