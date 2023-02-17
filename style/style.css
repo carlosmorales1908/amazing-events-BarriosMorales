@@ -5,6 +5,10 @@ body{
     /* min-height: 45em; */
 }
 
+main{
+    min-height: 60vh;
+}
+
 .logo img{
     width: 12em;
 }
@@ -170,7 +174,7 @@ footer{
 }
 
 
-/*                                              responsive  */
+/*                                                    responsive  */
 @media only screen and (min-width: 360px) and (max-width: 768px) {
     .details-card{
         flex-wrap: wrap;
