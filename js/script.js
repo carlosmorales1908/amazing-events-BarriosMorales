@@ -260,3 +260,7 @@ for (let i = 0; i < data.length; i++) {
     latitud: ${data[i].address.geo.lat} 
     longitud: ${data[i].address.geo.lng}` );
 }
+
+const sumar = (a,b) => a+b;
+console.log(sumar(5,5))
+console.log(sumar(3,4))
