@@ -87,35 +87,40 @@ main{
 }
 
 .cards-container{
+    padding: 0em 5em;
     padding-top: 3em;
     padding-bottom: 10em;
     width: 100%;
 }
 
-.cards-container p{
-    margin: 0px;
+.cards-container .card-text{
+    margin: 1em 0.3em;
+    height: 4em;
+    overflow: hidden;
 }
 
 .card{
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.34);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.34);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.34);
+    background-color: #f7e7f1;
+    -webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.42);
+    -moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.42);
+    box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.42);
 }
 
 .card-img-top{
     max-width: 16em;
-    max-height: 10em;
+    height: 10em;
     margin-top: 1em;
     border-radius: 10px;
 }
 
 .price{
     margin-top: 1em;
+    font-weight: bolder;
 }
 /*                                                      contact  */
 
 textarea {
-    resize: none;
+    resize: none;    
 }
 
 .form-container{
@@ -178,6 +183,7 @@ footer{
 
 
 /*                                                    responsive  */
+
 @media only screen and (min-width: 360px) and (max-width: 768px) {
     .details-card{
         flex-wrap: wrap;
