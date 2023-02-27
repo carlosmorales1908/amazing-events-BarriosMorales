@@ -7,16 +7,19 @@ const cardContainer = document.getElementById('cards-container');
 console.log(data.currentDate);
 const today = data.currentDate;
 
+const mounths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
 function getUpcomingEvents(events){
     let cards = "";
     for (let i=0; i<events.length; i++){
         if(events[i].date>today){
+            let date = events[i].date;
             cards += 
             `<div class="card" style="max-width: 18rem;">
                 <img class="card-img-top" src="${events[i].image}" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${events[i].name}</h5>
-                    <h6>${events[i].date}</h6>
+                    <h6>${date.slice(8,10)}-${mounths[date.slice(5,7)-1]}-${date.slice(0,4)}</h6>
                     <p class="card-text">${events[i].description}</p>
                     <h6>Place: ${events[i].place}</h6>
                     <div class="price d-flex justify-content-between align-items-center">
