@@ -3,10 +3,28 @@
 // const mounth = parseInt(data.currentDate.slice(5,7));
 // const day = parseInt(data.currentDate.slice(8,10));
 
-const cardContainer = document.getElementById('cards-container');
+
 console.log(data.currentDate);
 const today = data.currentDate;
 
+
+const categoriesContainer = document.getElementById('categories');
+function generateCategories(categories){
+    let categoriesItems = "";
+    categories.forEach(category => {
+        categoriesItems += `
+            <input type="checkbox" id=${category} name="category" value=${category}>
+            <label for=${category} class="label-distance">${category}</label>`
+        
+    })
+    return categoriesItems;
+}
+
+categoriesContainer.innerHTML=generateCategories(categories)
+
+
+
+const cardContainer = document.getElementById('cards-container');
 const mounths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
 function getUpcomingEvents(events){

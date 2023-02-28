@@ -448,3 +448,11 @@ const data =
       }
     ]
 }
+
+let categories = new Set();
+
+for(let i=0; i< data.events.length; i++){
+  categories.add(data.events[i].category);
+}
+
+

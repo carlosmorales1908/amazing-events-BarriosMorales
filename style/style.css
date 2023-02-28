@@ -111,6 +111,7 @@ main{
     height: 10em;
     margin-top: 1em;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .price{
