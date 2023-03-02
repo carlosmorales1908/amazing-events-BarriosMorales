@@ -89,7 +89,7 @@ main{
 .cards-container{
     padding: 0em 5em;
     padding-top: 3em;
-    padding-bottom: 10em;
+    padding-bottom: 7em;
     width: 100%;
 }
 
@@ -149,6 +149,10 @@ textarea {
 
 .imagen img{
     height: 15em;
+}
+
+.img-no-found{
+    max-width: 37em;
 }
 
 /*                                                        footer*/

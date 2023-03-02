@@ -40,22 +40,28 @@ function getPastEvents(events){
 
 function renderCards(listData){
     let cards = "";
-    for (let i = 0; i < listData.length; i++) {
-        let date = listData[i].date;
-        cards +=
-            `<div class="card" style="max-width: 18rem;">
-                <img class="card-img-top" src="${listData[i].image}" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${listData[i].name}</h5>
-                    <h6>${date.slice(8, 10)}-${mounths[date.slice(5, 7) - 1]}-${date.slice(0, 4)}</h6>
-                    <p class="card-text">${listData[i].description}</p>
-                    <h6>Place: ${listData[i].place}</h6>
-                    <div class="price d-flex justify-content-between align-items-center">
-                        <p class="price">Price: $${listData[i].price}</p>
-                        <a href="./details.html" class="btn">See more</a>
+    if(listData.length!=0){
+        for (let i = 0; i < listData.length; i++) {
+            let date = listData[i].date;
+            cards +=
+                `<div class="card" style="max-width: 18rem;">
+                    <img class="card-img-top" src="${listData[i].image}" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${listData[i].name}</h5>
+                        <h6>${date.slice(8, 10)}-${mounths[date.slice(5, 7) - 1]}-${date.slice(0, 4)}</h6>
+                        <p class="card-text">${listData[i].description}</p>
+                        <h6>Place: ${listData[i].place}</h6>
+                        <div class="price d-flex justify-content-between align-items-center">
+                            <p class="price">Price: $${listData[i].price}</p>
+                            <a href="./details.html" class="btn">See more</a>
+                        </div>
                     </div>
-                </div>
-            </div>`
+                </div>`;
+        }
+        
+    }
+    else{
+        cards += `<img class="img-no-found" src="./assets/no-found.png" alt="No found image">`;
     }
     cardContainer.innerHTML = cards;
 }
