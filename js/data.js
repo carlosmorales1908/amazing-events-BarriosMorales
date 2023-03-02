@@ -449,10 +449,34 @@ const data =
     ]
 }
 
-let categories = new Set();
+const categories = new Set();
+const mounths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
 for(let i=0; i< data.events.length; i++){
   categories.add(data.events[i].category);
 }
+
+function filterCardsByName(events, name) {
+  let listData = [];
+  for (let i=0; i<events.length; i++) {
+      if (events[i].name.toLowerCase().includes(name)) {
+          listData.push(events[i]);
+      }
+  }
+  return listData;
+}
+
+function filterCardsByCategory(events,categorieslist){
+  let listData = [];
+  for(let i=0; i<categorieslist.length; i++ ){
+      for (let j=0; j<events.length; j++) {
+          if (events[j].category == categorieslist[i]) {
+              listData.push(events[j])
+          }
+      }
+  }
+  return listData;
+}
+
 
 

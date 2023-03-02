@@ -1,8 +1,22 @@
+
+/*                                                                         Variable declaration                 */
 const today = data.currentDate;
 console.log(today);
-
-
 const categoriesContainer = document.getElementById('categories');
+const cardContainer = document.getElementById('cards-container');
+const LisCategoriesSelected = []
+const inputData = document.getElementById('textSearch');
+var inputedText = "";
+
+
+generateCategories(categories);
+generateAllEvents(data.events);
+
+
+
+/*                                                                          Functions                            */
+
+
 function generateCategories(categories) {
     let categoriesItems = "";
     categories.forEach(category => {
@@ -11,71 +25,127 @@ function generateCategories(categories) {
             <label for=${category} class="label-distance">${category}</label>`
 
     })
-    return categoriesItems;
+    categoriesContainer.innerHTML = categoriesItems;
 }
 
-categoriesContainer.innerHTML = generateCategories(categories)
-
-
-
-const cardContainer = document.getElementById('cards-container');
-const mounths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-// <h6>${date.slice(8,10)}-${date.slice(5,7)}-${date.slice(0,4)}</h6> 
-function getAllEvents(events) {
-    let cards = "";
+function generateAllEvents(events) {
+    let listData = [];
     for (let i = 0; i < events.length; i++) {
-        let date = events[i].date;
-        cards +=
-            `<div class="card" style="max-width: 18rem;">
-          <img class="card-img-top" src="${events[i].image}" alt="...">
-          <div class="card-body">
-              <h5 class="card-title">${events[i].name}</h5>
-              <h6>${date.slice(8, 10)}-${mounths[date.slice(5, 7) - 1]}-${date.slice(0, 4)}</h6>
-              <p class="card-text">${events[i].description}</p>
-              <h6>Place: ${events[i].place}</h6>
-              <div class="price d-flex justify-content-between align-items-center">
-                  <p class="price">Price: $${events[i].price}</p>
-                  <a href="./details.html" class="btn">See more</a>
-              </div>
-          </div>
-      </div>`
+        listData.push(events[i])
     }
-    return cards;
+    renderCards(listData);
 }
 
-cardContainer.innerHTML = getAllEvents(data.events);
-
-function filterCardsByName(events, name) {
+function renderCards(listData){
     let cards = "";
-    for (let i = 0; i < events.length; i++) {
-        if (events[i].name.toLowerCase().includes(name)) {
-            let date = events[i].date;
-            cards +=
-                `<div class="card" style="max-width: 18rem;">
-                    <img class="card-img-top" src="${events[i].image}" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${events[i].name}</h5>
-                        <h6>${date.slice(8, 10)}-${mounths[date.slice(5, 7) - 1]}-${date.slice(0, 4)}</h6>
-                        <p class="card-text">${events[i].description}</p>
-                        <h6>Place: ${events[i].place}</h6>
-                        <div class="price d-flex justify-content-between align-items-center">
-                            <p class="price">Price: $${events[i].price}</p>
-                            <a href="./details.html" class="btn">See more</a>
-                        </div>
+    for (let i = 0; i < listData.length; i++) {
+        let date = listData[i].date;
+        cards +=
+            `<div id="${listData[i]._id}" class="card" style="max-width: 18rem;">
+                <img class="card-img-top" src="${listData[i].image}" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${listData[i].name}</h5>
+                    <h6>${date.slice(8, 10)}-${mounths[date.slice(5, 7) - 1]}-${date.slice(0, 4)}</h6>
+                    <p class="card-text">${listData[i].description}</p>
+                    <h6>Place: ${listData[i].place}</h6>
+                    <div class="price d-flex justify-content-between align-items-center">
+                        <p class="price">Price: $${listData[i].price}</p>
+                        <a onclick="seeMore(${listData[i]._id})" href="./details.html" class="btn">See more</a>
                     </div>
-                </div>`
+                </div>
+            </div>`
+    }
+    cardContainer.innerHTML = cards;
+}
+
+function seeMore(id){
+    console.log(id)
+}
+
+
+
+
+
+
+/*                                                                       Events listeners                                         */
+
+
+categoriesContainer.addEventListener('click', (e) =>{
+    if(e.target.checked!=undefined){
+        categories.forEach(category => {
+            if(e.target.value == category){
+                if(e.target.checked){
+                    LisCategoriesSelected.push(category);
+                }
+                else{
+                    let pos = LisCategoriesSelected.indexOf(category);
+                    if(pos!=-1){
+                        LisCategoriesSelected.splice(pos, 1);
+                    }
+                }
+            }
+        })
+    }
+    if(inputedText==""){
+        if(LisCategoriesSelected.length!=0){
+            renderCards(filterCardsByCategory(data.events,LisCategoriesSelected));
+        }
+        else{
+            generateAllEvents(data.events);
         }
     }
-    return cards;
-}
-
-let btnSearch = document.getElementById("btn-search");
-
-btnSearch.addEventListener('click', function () {
-    let textInput = document.getElementById('textSearch').value;
-    textInput = textInput.toLowerCase();
-    cardContainer.innerHTML = filterCardsByName(data.events,textInput)
+    else{
+        if(LisCategoriesSelected.length!=0){
+            renderCards(filterCardsByCategory(filterCardsByName(data.events,inputedText),LisCategoriesSelected));
+        }
+        else{
+            renderCards(filterCardsByName(data.events,inputedText));
+        }
+    }    
 });
+
+
+
+inputData.addEventListener('keyup', function () { 
+    inputedText = document.getElementById('textSearch').value;
+    inputedText = inputedText.toLowerCase();
+    if(LisCategoriesSelected.length==0){
+        renderCards(filterCardsByName(data.events,inputedText));
+    }
+    else{
+        renderCards(filterCardsByName(filterCardsByCategory(data.events,LisCategoriesSelected),inputedText));
+    }
+});
+
+
+// inputData.addEventListener('click', function () {
+//     let inputedText = document.getElementById('textSearch').value;
+//     console.log(inputData)
+//     if(inputedText==""){
+//         console.log("Entro al if");
+//         generateAllEvents(data.events);
+//     }
+//     console.log(inputedText);
+// })
+
+// let btnSeeMore=document.getElementsByClassName('btn');
+// console.log(btnSeeMore)
+// btnSeeMore.addEventListener('click', (e) =>{
+//     console.log(e);
+// })
+
+
+
+// let btnSearch = document.getElementById("btn-search");
+// btnSearch.addEventListener('click', function () {
+//     let textInput = document.getElementById('textSearch').value;
+//     textInput = textInput.toLowerCase();
+//     cardContainer.innerHTML = filterCardsByName(data.events,textInput)
+// });
+
+
+
+
 
 
 // for (let i = 0; i < 3; i++) {

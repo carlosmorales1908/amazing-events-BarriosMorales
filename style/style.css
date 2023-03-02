@@ -80,11 +80,11 @@ main{
     height: 1.3em;
 }
 
-.search-logo:hover{
+/* .search-logo:hover{
     color: white;
     background-color: #e0046c;
     border-radius: 45px;
-}
+} */
 
 .cards-container{
     padding: 0em 5em;
