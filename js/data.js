@@ -456,7 +456,7 @@ for(let i=0; i< data.events.length; i++){
   categories.add(data.events[i].category);
 }
 
-function filterCardsByName(events, name) {
+function filterEventsByName(events, name) {
   let listData = [];
   for (let i=0; i<events.length; i++) {
       if (events[i].name.toLowerCase().includes(name)) {
@@ -466,7 +466,7 @@ function filterCardsByName(events, name) {
   return listData;
 }
 
-function filterCardsByCategory(events,categorieslist){
+function filterEventsByCategory(events,categorieslist){
   let listData = [];
   for(let i=0; i<categorieslist.length; i++ ){
       for (let j=0; j<events.length; j++) {

@@ -91,7 +91,7 @@ categoriesContainer.addEventListener('click', (e) =>{
     }
     if(inputedText==""){
         if(LisCategoriesSelected.length!=0){
-            renderCards(filterCardsByCategory(getPastEvents(data.events),LisCategoriesSelected));
+            renderCards(filterEventsByCategory(getPastEvents(data.events),LisCategoriesSelected));
         }
         else{
             renderCards(getPastEvents(data.events));
@@ -99,10 +99,10 @@ categoriesContainer.addEventListener('click', (e) =>{
     }
     else{
         if(LisCategoriesSelected.length!=0){
-            renderCards(filterCardsByCategory(filterCardsByName(getPastEvents(data.events),inputedText),LisCategoriesSelected));
+            renderCards(filterEventsByCategory(filterEventsByName(getPastEvents(data.events),inputedText),LisCategoriesSelected));
         }
         else{
-            renderCards(filterCardsByName(getPastEvents(data.events),inputedText));
+            renderCards(filterEventsByName(getPastEvents(data.events),inputedText));
         }
     }    
 });
@@ -113,9 +113,9 @@ inputData.addEventListener('keyup', function () {
     inputedText = document.getElementById('textSearch').value;
     inputedText = inputedText.toLowerCase();
     if(LisCategoriesSelected.length==0){
-        renderCards(filterCardsByName(getPastEvents(data.events),inputedText));
+        renderCards(filterEventsByName(getPastEvents(data.events),inputedText));
     }
     else{
-        renderCards(filterCardsByName(filterCardsByCategory(getPastEvents(data.events),LisCategoriesSelected),inputedText));
+        renderCards(filterEventsByName(filterEventsByCategory(getPastEvents(data.events),LisCategoriesSelected),inputedText));
     }
 });

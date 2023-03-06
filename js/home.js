@@ -31,7 +31,7 @@ function generateCategories(categories) {
 function generateAllEvents(events) {
     let listData = [];
     for (let i = 0; i < events.length; i++) {
-        listData.push(events[i])
+        listData.push(events[i]);
     }
     renderCards(listData);
 }
@@ -75,11 +75,12 @@ categoriesContainer.addEventListener('click', (e) =>{
             if(e.target.value == category){
                 if(e.target.checked){
                     LisCategoriesSelected.push(category);
+                    console.log(LisCategoriesSelected)
                 }
                 else{
                     let pos = LisCategoriesSelected.indexOf(category);
                     if(pos!=-1){
-                        LisCategoriesSelected.splice(pos, 1);
+                        LisCategoriesSelected.splice(pos);
                     }
                 }
             }
@@ -87,7 +88,7 @@ categoriesContainer.addEventListener('click', (e) =>{
     }
     if(inputedText==""){
         if(LisCategoriesSelected.length!=0){
-            renderCards(filterCardsByCategory(data.events,LisCategoriesSelected));
+            renderCards(filterEventsByCategory(data.events,LisCategoriesSelected));
         }
         else{
             generateAllEvents(data.events);
@@ -95,10 +96,10 @@ categoriesContainer.addEventListener('click', (e) =>{
     }
     else{
         if(LisCategoriesSelected.length!=0){
-            renderCards(filterCardsByCategory(filterCardsByName(data.events,inputedText),LisCategoriesSelected));
+            renderCards(filterEventsByCategory(filterEventsByName(data.events,inputedText),LisCategoriesSelected));
         }
         else{
-            renderCards(filterCardsByName(data.events,inputedText));
+            renderCards(filterEventsByName(data.events,inputedText));
         }
     }    
 });
@@ -109,10 +110,10 @@ inputData.addEventListener('keyup', function () {
     inputedText = document.getElementById('textSearch').value;
     inputedText = inputedText.toLowerCase();
     if(LisCategoriesSelected.length==0){
-        renderCards(filterCardsByName(data.events,inputedText));
+        renderCards(filterEventsByName(data.events,inputedText));
     }
     else{
-        renderCards(filterCardsByName(filterCardsByCategory(data.events,LisCategoriesSelected),inputedText));
+        renderCards(filterEventsByName(filterEventsByCategory(data.events,LisCategoriesSelected),inputedText));
     }
 });
 
@@ -139,7 +140,7 @@ inputData.addEventListener('keyup', function () {
 // btnSearch.addEventListener('click', function () {
 //     let textInput = document.getElementById('textSearch').value;
 //     textInput = textInput.toLowerCase();
-//     cardContainer.innerHTML = filterCardsByName(data.events,textInput)
+//     cardContainer.innerHTML = filterEventsByName(data.events,textInput)
 // });
 
 
