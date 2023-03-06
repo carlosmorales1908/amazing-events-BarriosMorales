@@ -54,12 +54,11 @@ function renderCards(listData){
                         <h6>Place: ${listData[i].place}</h6>
                         <div class="price d-flex justify-content-between align-items-center">
                             <p class="price">Price: $${listData[i].price}</p>
-                            <a href="./details.html" class="btn">See more</a>
+                            <a href="./details.html?id=${listData[i]._id}" class="btn">See more</a>
                         </div>
                     </div>
                 </div>`;
         }
-        
     }
     else{
         cards += `<img class="img-no-found" src="./assets/no-found.png" alt="No found image">`;
@@ -96,7 +95,7 @@ categoriesContainer.addEventListener('click', (e) =>{
             renderCards(filterCardsByCategory(getUpcomingEvents(data.events),LisCategoriesSelected));
         }
         else{
-            generateAllEvents(data.events);
+            renderCards(getUpcomingEvents(data.events));
         }
     }
     else{

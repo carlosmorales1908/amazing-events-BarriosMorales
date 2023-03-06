@@ -51,7 +51,7 @@ function renderCards(listData){
                         <h6>Place: ${listData[i].place}</h6>
                         <div class="price d-flex justify-content-between align-items-center">
                             <p class="price">Price: $${listData[i].price}</p>
-                            <a href="./details.html" class="btn">See more</a>
+                            <a href="./details.html?id=${listData[i]._id}" class="btn">See more</a>
                         </div>
                     </div>
                 </div>`;
@@ -63,11 +63,6 @@ function renderCards(listData){
     }
     cardContainer.innerHTML = cards;
 }
-
-function seeMore(id){
-    console.log(id)
-}
-
 
 
 

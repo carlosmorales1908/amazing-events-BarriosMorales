@@ -5,9 +5,9 @@ body{
     /* min-height: 45em; */
 }
 
-main{
+/* main{
     min-height: 60vh;
-}
+} */
 
 .logo img{
     width: 12em;
@@ -132,11 +132,19 @@ textarea {
 
 .details-card{
     margin-top: 5em;
-    max-width: 936px;
+    max-width: 52em;
     height: auto;
     /* max-height: 292px; */
     padding: 1em;
+    background-color: #e0428c;
+    border-radius: 30px;
+    margin-bottom: 7em;
 }
+
+.event-info{
+    margin-bottom: 0rem;
+}
+
 
 .imagen, .detail{
     margin: .5em;
@@ -144,16 +152,24 @@ textarea {
 
 .detail{
     padding: 1em;
+    border-radius: 30px;
+    background-color: #d2d2d2;
 }
 
 
 .imagen img{
     height: 15em;
+    width: 22em;
+    object-fit: cover;
+
 }
+
 
 .img-no-found{
     max-width: 37em;
 }
+
+
 
 /*                                                        footer*/
 footer{
