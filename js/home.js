@@ -75,12 +75,11 @@ categoriesContainer.addEventListener('click', (e) =>{
             if(e.target.value == category){
                 if(e.target.checked){
                     LisCategoriesSelected.push(category);
-                    console.log(LisCategoriesSelected)
                 }
                 else{
                     let pos = LisCategoriesSelected.indexOf(category);
                     if(pos!=-1){
-                        LisCategoriesSelected.splice(pos);
+                        LisCategoriesSelected.splice(pos,1);
                     }
                 }
             }
@@ -190,3 +189,31 @@ inputData.addEventListener('keyup', function () {
 // btnSearch.addEventListener('click',function(){
 //     textSearch.innerHTML = "hola";
 // })
+
+
+// let lista = [3,6,5]
+
+// let lis2=[6,7]
+
+// for(let i=0; i<lista.length; i++){
+//     for(let j=0; j<lis2.length; j++){
+//         if(lista[i]==lis2[j]){
+//             console.log(`lista=${lista[i]} es igual a lis2=${lis2[j]}`)
+//         }
+//         else{
+//             console.log(`lista=${lista[i]} no es igual a lis2=${lis2[j]}`)
+//         }
+//     }
+// }
+
+// console.log("el otro for")
+// for(evento of lista){
+//     for(categoria of lis2){
+//         if(evento==categoria){
+//             console.log(`lista=${evento} es igual a lis2=${categoria}`)
+//         }
+//         else{
+//             console.log(`lista=${evento} no es igual a lis2=${categoria}`)
+//         }
+//     }
+// }
