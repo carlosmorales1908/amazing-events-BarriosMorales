@@ -1,5 +1,3 @@
-console.log("llego");
-
 const queryString = location.search;
 console.log(queryString);
 const params = new URLSearchParams(queryString);
@@ -8,7 +6,12 @@ const idEvent = params.get("id");
 
 
 const detailsCard = document.getElementById('details-card');
-generateDetailsCard(data.events,idEvent);
+getDataFromApi().then(() => {
+    today = data.currentDate;
+    generateDetailsCard(data.events,idEvent); 
+    console.log(today)
+});
+
 
 function generateDetailsCard(events,id){
     let card="";

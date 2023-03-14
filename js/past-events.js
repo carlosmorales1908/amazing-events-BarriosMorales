@@ -1,17 +1,21 @@
 
 /*                                                                         Variable declaration                 */
-
-const today = data.currentDate;
-console.log(today);
 const categoriesContainer = document.getElementById('categories');
 const cardContainer = document.getElementById('cards-container');
 const LisCategoriesSelected = []
 const inputData = document.getElementById('textSearch');
+var today;
 var inputedText = "";
 
 
-generateCategories(categories);
-renderCards(getPastEvents(data.events));
+getDataFromApi().then(() => {
+    today = data.currentDate;
+    console.log(today);
+    generateCategories(categories);
+    renderCards(getPastEvents(data.events));
+});
+
+
 
 
 
@@ -29,6 +33,7 @@ function generateCategories(categories){
 }
 
 function getPastEvents(events){
+    console.log("getPastEvents")
     let listData = [];
     for (let i=0; i<events.length; i++){
         if(events[i].date<today){

@@ -1,18 +1,23 @@
 
 /*                                                                         Variable declaration                 */
 
-const today = data.currentDate;
-console.log(today);
+
+
 const categoriesContainer = document.getElementById('categories');
 const cardContainer = document.getElementById('cards-container');
 const LisCategoriesSelected = []
 const inputData = document.getElementById('textSearch');
+var today;
 var inputedText = "";
 
 
-generateCategories(categories);
-renderCards(getUpcomingEvents(data.events));
 
+getDataFromApi().then(() => {
+    today = data.currentDate;
+    console.log(today);
+    generateCategories(categories);
+    renderCards(getUpcomingEvents(data.events));
+});
 
 
 
