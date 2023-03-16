@@ -11,7 +11,6 @@ const pastEventsStatisticsByCategory = document.getElementById('past-events-stat
 
 
 
-//SOLO EVENTOS PASADOS
 getDataFromApi().then(() => {
     today = data.currentDate; 
     console.log(today)
@@ -47,14 +46,15 @@ function loadPastEvents(){
 function renderEventstatistics(listEvents){
     row='';
     orderedByCapacity = listEvents.map(event => event);
-    orderedByCapacity.sort((a,b) => b.capacity - a.capacity);
+    orderedByCapacity = orderedByCapacity.sort((a,b) => b.capacity - a.capacity);
+    console.log(orderedByCapacity)
     indx=1;
     while(indx<4){
         row+=
             `<tr>
                 <td>${listEvents[indx-1].name}: ${listEvents[indx-1].percentage}%</td>
                 <td>${listEvents.slice(indx*-1)[0].name}: ${listEvents.slice(indx*-1)[0].percentage}%</td>
-                <td>${orderedByCapacity[indx-1].name}: ${orderedByPercentage[indx-1].capacity}</td>
+                <td>${orderedByCapacity[indx-1].name}: ${orderedByCapacity[indx-1].capacity}</td>
             </tr>`
         indx++;
     }
