@@ -8,7 +8,6 @@ var today;
 var inputedText = "";
 
 
-// generateData();
 getDataFromApi().then(() => {
     today = data.currentDate;
     generateCategories(categories);

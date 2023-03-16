@@ -33,7 +33,6 @@ function generateCategories(categories){
 }
 
 function getPastEvents(events){
-    console.log("getPastEvents")
     let listData = [];
     for (let i=0; i<events.length; i++){
         if(events[i].date<today){

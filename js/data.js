@@ -470,13 +470,6 @@ async function getDataFromApi(){
 }
 
 
-// function generateData(){
-//   getDataFromApi().then((dataResponse) =>{
-    
-    
-//   })
-// }
-// generateData();
 function loadCategories(){
   for(let i=0; i< data.events.length; i++){
     categories.add(data.events[i].category);

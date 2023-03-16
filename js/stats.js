@@ -16,12 +16,11 @@ getDataFromApi().then(() => {
     today = data.currentDate; 
     console.log(today)
     loadPastEventsFiltred();
-    orderedByPercentage = highestPercentageAttendance();
+    orderedByPercentage = pastEventsFiltred.sort((a,b) => b.percentage - a.percentage);
     renderEventstatistics(orderedByPercentage);
     loadUpcomingEvents();
     renderStatisticsByCategory(statisticsByCategory(upcomingEvents),categories,upcomingEventsStatisticsByCategory);
     loadPastEvents();
-    console.log(pastEvents)
     renderStatisticsByCategory(statisticsByCategory(pastEvents),categories,pastEventsStatisticsByCategory);
 
 });
@@ -32,7 +31,7 @@ function loadPastEventsFiltred(){
         name: even.name,
         assistance: even.assistance,
         capacity: even.capacity,
-        percentage: Math.round(even.assistance/even.capacity*100)
+        percentage: Number.parseFloat((even.assistance*100)/even.capacity).toFixed(2)
        }} )
 }
 
@@ -43,17 +42,11 @@ function loadUpcomingEvents(){
 function loadPastEvents(){
     pastEvents = data.events.filter(even => even.date < today ).map(even => even);
 }
-function highestPercentageAttendance(){
-   return pastEventsInOrder=pastEventsFiltred.sort((a,b) => b.percentage - a.percentage);
-//    console.log(pastEventsInOrder.lenght)
-//    console.log(typeof(pastEventsInOrder))
-//    console.log(pastEventsInOrder[0])
-//    console.log(pastEventsInOrder[pastEventsInOrder.lenght-3])
-}
+
 
 function renderEventstatistics(listEvents){
     row='';
-    orderedByCapacity = listEvents;
+    orderedByCapacity = listEvents.map(event => event);
     orderedByCapacity.sort((a,b) => b.capacity - a.capacity);
     indx=1;
     while(indx<4){
@@ -89,7 +82,7 @@ function statisticsByCategory(eventList){
             }
         }
         if(revenues!=0){
-            percentageAttendance = Math.round(assistance/capacity*100);
+            percentageAttendance = Number.parseFloat((assistance*100)/capacity).toFixed(2);
         }
         listEventsObj.push({revenues,percentageAttendance})
     })
@@ -104,7 +97,7 @@ function renderStatisticsByCategory(statistics,categories,container){
             `<tr>
                 <td>${listCategories[i]}</td>
                 <td>$${statistics[i].revenues}</td>
-                <td>${statistics[i].percentageAttendance}</td>
+                <td>${statistics[i].percentageAttendance}%</td>
             </tr>`
     }
     container.innerHTML = row;
