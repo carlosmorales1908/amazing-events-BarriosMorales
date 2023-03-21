@@ -21,7 +21,6 @@ getDataFromApi().then(() => {
     renderStatisticsByCategory(statisticsByCategory(upcomingEvents),categories,upcomingEventsStatisticsByCategory);
     loadPastEvents();
     renderStatisticsByCategory(statisticsByCategory(pastEvents),categories,pastEventsStatisticsByCategory);
-
 });
 
 

@@ -12,7 +12,7 @@
     <title>Home</title>
 </head>
 
-<body>
+<body id="body">
 
     <div class="header-top">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -27,9 +27,9 @@
                 <li class="nav-item"><a href="./contact.html" class="nav-link nav-bar-top-text">Contact</a></li>
                 <li class="nav-item"><a href="./stats.html" class="nav-link nav-bar-top-text">Stats</a></li>
             </ul>
-            <button type="button" class="btn btn-dark">Dark</button>
+            <button id="dark-mode" type="button" class="btn btn-dark">Dark</button>
         </header>
-        <div class="nav-control d-flex justify-content-between align-items-center">
+        <div id="nav-bar" class="nav-control d-flex justify-content-between align-items-center">
             <a href="./stats.html"><</a>
             <h1>Home</h1>
             <a href="./upcoming-events.html">></a>
@@ -39,7 +39,7 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-                <section id="categories" class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0" >
+                <section id="categories" class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 text-black" >
                 </section>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
@@ -58,7 +58,7 @@
     <section id="cards-container" class="cards-container row grid gap-3 justify-content-center">
     </section>
 
-   <footer>
+   <footer id="footer">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="redes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-instagram ig" viewBox="0 0 16 16">
@@ -84,6 +84,7 @@
     
     <script src="./js/data.js"></script>
     <script src="./js/home.js"></script>
+    <script src="./js/dark-mode.js"></script>
 </body>
 
 </html>

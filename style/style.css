@@ -39,6 +39,10 @@ body{
     padding-right: 3em;
 }
 
+.text-black{
+    color: black;
+}
+
 .btn{
     background-color: #e0046c;
     color: white;
@@ -202,6 +206,34 @@ footer{
     color: black;
 }
 
+/*                                                        dark mode  */
+.dark-mode{
+    background-color: #262f37;
+}
+
+.text-white{
+    color: white;
+}
+
+.dark-card{
+    /* background-color: #4e3058; */
+    background-color: #30183b;
+    color: white;
+}
+
+.dark-footer{
+    background: #30183b;
+    color: white;
+}
+
+.dark-nav{
+    background: #30183b;
+    color: white;
+}
+
+.dark-nav a{
+    color: white;
+}
 
 /*                                                    responsive  */
 
