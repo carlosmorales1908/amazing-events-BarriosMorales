@@ -12,7 +12,7 @@
     <title>Stats</title>
 </head>
 
-<body>
+<body id="body">
     <div class="header-top">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="./index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none logo">
@@ -27,8 +27,9 @@
                 <li class="nav-item"><a href="./contact.html" class="nav-link nav-bar-top-text">Contact</a></li>
                 <li class="nav-item"><a href="./stats.html" id="active" class="nav-link nav-bar-top-text">Stats</a></li>
             </ul>
+            <div id="mode"></div>
         </header>
-        <div class="nav-control d-flex justify-content-between align-items-center">
+        <div id="nav-bar" class="nav-control d-flex justify-content-between align-items-center">
             <a href="./contact.html"><</a>
             <h1>Stats</h1>
             <a href="./index.html">></a>
@@ -36,7 +37,7 @@
     </div>
 
     <div class="stats-table container">
-        <table class="table table-hover table-bordered border-dark"> 
+        <table id="table" class="table table-hover table-bordered border-dark"> 
             <thead>
                 <tr class="first-theader">
                     <th colspan="3" >Event statistics</th>
@@ -77,7 +78,7 @@
             </tbody>
         </table>
     </div>
-    <footer>
+    <footer id="footer">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="redes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-instagram ig" viewBox="0 0 16 16">
@@ -97,6 +98,7 @@
 
    <script src="./js/data.js"></script>
    <script src="./js/stats.js"></script>
+   <script src="./js/dark-mode-stats.js"></script>
 </body>
 
 

@@ -12,7 +12,7 @@
     <title>Upcoming Events</title>
 </head>
 
-<body>
+<body id="body">
 
     <div class="header-top">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -27,8 +27,9 @@
                 <li class="nav-item"><a href="./contact.html" class="nav-link nav-bar-top-text">Contact</a></li>
                 <li class="nav-item"><a href="./stats.html" class="nav-link nav-bar-top-text">Stats</a></li>
             </ul>
+            <div id="mode"></div>
         </header>
-        <div class="nav-control d-flex justify-content-between align-items-center">
+        <div id="nav-bar" class="nav-control d-flex justify-content-between align-items-center">
             <a href="./index.html"><</a>
             <h1>Upcoming Events</h1>
             <a href="./past-events.html">></a>
@@ -57,7 +58,7 @@
     <section id="cards-container" class="cards-container row grid gap-3 justify-content-center">            
     </section>
 
-    <footer>
+    <footer id="footer">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="redes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-instagram ig" viewBox="0 0 16 16">
@@ -82,6 +83,7 @@
         crossorigin="anonymous"></script>
     <script src="./js/data.js"></script>
     <script src="./js/upcoming-events.js"></script>
+    <script src="./js/dark-mode.js"></script>
 </body>
 
 </html>

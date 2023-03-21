@@ -22,7 +22,7 @@ function generateDetailsCard(events,id){
                 `<div class="imagen d-flex align-self-center border">
                     <img src="${events[i].image}" alt="">
                 </div>
-                <div class="detail d-flex flex-column justify-content-center border">
+                <div id='details' class="detail d-flex flex-column justify-content-center border">
                     <h3 class="align-self-start">${events[i].name}</h3>
                     <p class="align-self-start">${events[i].description}</p> 
                     <p class="event-info">Category: ${events[i].category}</p>

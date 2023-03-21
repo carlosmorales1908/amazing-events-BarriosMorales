@@ -2,12 +2,12 @@
 body{
     padding: 0;
     margin: 0;
-    /* min-height: 45em; */
+    transition: .5s;
 }
 
-/* main{
+main{
     min-height: 60vh;
-} */
+}
 
 .logo img{
     width: 12em;
@@ -59,6 +59,7 @@ body{
     color: white;
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(176,176,176,1) 3%, rgba(111,111,111,1) 51%, rgba(158,158,158,1) 99%, rgba(255,255,255,1) 100%);
     height: 7em;
+    transition: .5s;
 }
 
 .nav-control a{
@@ -108,6 +109,7 @@ body{
     -webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.42);
     -moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.42);
     box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.42);
+    transition: .5s;
 }
 
 .card-img-top{
@@ -130,6 +132,13 @@ textarea {
 
 .form-container{
     margin-bottom: 2em;
+}
+
+.form{
+    background-color: #e0046c;
+    padding: 2em;
+    color: white;
+    border-radius: 2em;
 }
 
 /*                                                      details  */
@@ -180,8 +189,7 @@ footer{
     padding-top: 3em;
     padding-bottom: 2em;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(111,111,111,1) 100%);
-
-
+    transition: .5s;
 }
 .redes .ig, .redes .fb, .redes .wpp{
     width: 3em;
@@ -199,40 +207,65 @@ footer{
 .first-theader{
     background-color: #e0428c;
     color: rgb(43, 43, 43);
+    transition: .5s;
 }
 
 .second-theader{
     background-color: #929292;
     color: black;
+    transition: .5s;
 }
 
 /*                                                        dark mode  */
 .dark-mode{
     background-color: #262f37;
+    transition: .5s;
 }
 
 .text-white{
     color: white;
+    transition: .5s;
 }
 
 .dark-card{
     /* background-color: #4e3058; */
     background-color: #30183b;
     color: white;
+    transition: .5s;
 }
 
-.dark-footer{
-    background: #30183b;
+.dark-table{
+    background-color: #464b4f;
     color: white;
+    transition: .5s;
+}
+
+.dark-details{
+    background-color: #30183b;
+}
+.dark-detail{
+    background-color: #d2d2d2c9;
 }
 
 .dark-nav{
-    background: #30183b;
+    /* background: #30183b; */
+    /* background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(198,55,123,1) 50%, rgba(0,0,0,1) 100%); */
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(138,53,180,1) 50%, rgba(0,0,0,1) 100%);
     color: white;
+    transition: .5s;
 }
 
 .dark-nav a{
     color: white;
+    transition: .5s;
+}
+
+.dark-footer{
+    /* background: #30183b; */
+    /* background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(138,53,180,1) 50%, rgba(0,0,0,1) 100%); */
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(138,53,180,1) 100%);
+    color: white;
+    transition: .5s;
 }
 
 /*                                                    responsive  */

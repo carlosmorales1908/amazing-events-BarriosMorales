@@ -1,21 +1,22 @@
 const btnDarkMode = document.getElementById('mode');
 const bodyContainer = document.getElementById('body');
-const footer = document.getElementById('footer');
 const navControl = document.getElementById('nav-bar');
-var cardsBody;
+const detailsContainer = document.getElementById('details-card');
+const footer = document.getElementById('footer');
+var detailsData;
 
 getDataFromApi().then(() => {
-    cardsBody = document.querySelectorAll('.card');
-    loadModeCards();
+    detailsData = document.getElementById('details');
+    loadMode();
 });
-loadMode();
+
+
 
 btnDarkMode.addEventListener('click', function(){
     bodyContainer.classList.toggle('dark-mode');
-    categoriesContainer.classList.toggle('text-white');
-    cardsBody.forEach(card => card.classList.toggle("dark-card"));
     footer.classList.toggle('dark-footer');
-    navControl.classList.toggle('dark-nav');
+    detailsContainer.classList.toggle('dark-details');
+    detailsData.classList.toggle('dark-detail');
     setStoreDarkMode(bodyContainer.classList.contains('dark-mode'));
     changeIcon(bodyContainer.classList.contains('dark-mode'));
 })
@@ -27,31 +28,11 @@ function loadMode(){
     }
     else if(darkmode == "true"){
         bodyContainer.classList.add('dark-mode');
-        categoriesContainer.classList.add('text-white');
-        // getDataFromApi().then(() => {
-        //     cardsBody.forEach(card => card.classList.add("dark-card"));
-        // });
         footer.classList.add('dark-footer');
-        navControl.classList.add('dark-nav');
+        detailsContainer.classList.add('dark-details');
+        detailsData.classList.add('dark-detail');
     }
     changeIcon(localStorage.getItem('darkmode')!="false");
-    // if(darkmode){
-    //     bodyContainer.classList.add('dark-mode');
-    // }
-    // else{
-    //     setStoreDarkMode(!darkmode);
-    //     console.log(!darkmode)
-    // }
-}
-
-function loadModeCards(){
-    let darkmode = localStorage.getItem('darkmode');
-    if(!darkmode){
-        setStoreDarkMode("false");
-    }
-    else if(darkmode == "true"){
-        cardsBody.forEach(card => card.classList.add("dark-card"));
-    }
 }
 
 function setStoreDarkMode(value){
@@ -80,61 +61,3 @@ function changeIcon(darkmode){
       </svg>`
     }
 }
-
-
-/* PRUEBA PARA USAR EL MISMO EN LAS OTRAS PAGES */
-
-// try{
-//     getDataFromApi().then(() => {
-//         cardsBody = document.querySelectorAll('.card');
-//         loadMode(true);
-//     });
-//   }
-//   catch(error){
-//     console.log(error);
-
-//     loadMode(false);
-//   }
-
-
-// btnDarkMode.addEventListener('click', function(){
-//     bodyContainer.classList.toggle('dark-mode');
-//     if(cardsBody!=undefined){
-//         categoriesContainer.classList.toggle('text-white');
-//         cardsBody.forEach(card => card.classList.toggle("dark-card"));
-//     }
-//     footer.classList.toggle('dark-footer');
-//     navControl.classList.toggle('dark-nav');
-//     setStoreDarkMode(bodyContainer.classList.contains('dark-mode'));
-//     changeIcon(bodyContainer.classList.contains('dark-mode'));
-    
-// })
-
-
-
-// function loadMode(value){
-//     let darkmode = localStorage.getItem('darkmode');
-//     if(!darkmode){
-//         setStoreDarkMode("false");
-//     }
-//     else if(darkmode == "true"){
-//         bodyContainer.classList.add('dark-mode');
-//         if(value){
-//             categoriesContainer.classList.add('text-white');
-//             cardsBody.forEach(card => card.classList.add("dark-card"));
-//         }
-//         else{
-
-//         }
-//         footer.classList.add('dark-footer');
-//         navControl.classList.add('dark-nav');
-//     }
-//     changeIcon(localStorage.getItem('darkmode')!="false");
-//     // if(darkmode){
-//     //     bodyContainer.classList.add('dark-mode');
-//     // }
-//     // else{
-//     //     setStoreDarkMode(!darkmode);
-//     //     console.log(!darkmode)
-//     // }
-// }
