@@ -6,7 +6,6 @@ var cardsBody;
 
 getDataFromApi().then(() => {
     cardsBody = document.querySelectorAll('.card');
-    loadModeCards();
 });
 loadMode();
 

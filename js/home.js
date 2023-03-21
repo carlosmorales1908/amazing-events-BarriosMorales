@@ -65,6 +65,8 @@ function renderCards(listData){
         cards += `<img class="img-no-found" src="./assets/no-found.png" alt="No found image">`;
     }
     cardContainer.innerHTML = cards;
+    cardsBody = document.querySelectorAll('.card');
+    loadModeCards();
 }
 
 
